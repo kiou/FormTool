@@ -1,0 +1,1 @@
+![alt tag](http://pinelli-luc.fr/gitimg/formtool/image1.jpg)

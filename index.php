@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width; initial-scale=1;">
-	<title>Form tools</title>
+	<title>Form tool</title>
 	<link href="css/app.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -12,7 +12,7 @@
 
 
 
-    <h1>Form Tools</h1>
+    <h1>Form Tool</h1>
 
     <form action="#" method="post">
 
