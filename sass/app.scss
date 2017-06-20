@@ -1,0 +1,224 @@
+/* Import */
+@import "compass/css3";
+@import "fontawsome/font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
+
+/* Variables */
+$gris: #6C7A89;
+$rouge: #D91E18;
+$vert: #26A65B;
+$blanc: #FFFFFF;
+
+/* Global */
+*{
+    padding:0px;
+    margin:0px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    @include box-sizing(border-box);
+}
+
+body{
+    background-color: #f1f1f1;
+    padding: 30px;
+    @include border-radius(5px);
+}
+
+p{
+    font-size: 13px;
+}
+
+h1{
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.form-group{
+    margin-bottom: 20px;
+    label{
+        font-size: 14px;
+    }
+}
+
+/* FT */
+.ft-hidden{
+    display: none;
+}
+
+.ft-checkbox{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 3px;
+    border: 2px solid $gris;
+    @include border-radius(2px);
+    cursor: pointer;
+    text-align: center;
+    height: 20px;
+    width: 20px;
+    line-height:14px;
+    background-color: $blanc;
+    @include transition-property(background-color);
+    @include transition-duration(0.3s);
+    @include transition-timing-function(ease);
+    &.checked{
+        background-color: $gris;
+        &:after{
+            content:'\f00c';
+            font-family: FontAwesome;
+            color: $blanc;
+            font-size: 10px;
+        }
+    }
+    &.rouge{
+        border: 2px solid $rouge;
+        &.checked{
+            background-color: $rouge;
+        }
+    }
+    &.vert{
+        border: 2px solid $vert;
+        &.checked{
+            background-color: $vert;
+        }
+    }
+}
+
+.ft-radio-switch{
+    display: inline-block;
+    width: 45px;
+    height: 22px;
+    background-color: $gris;
+    position: relative;
+    cursor: pointer;
+    @include border-radius(11px);
+    @include transition-property(background-color);
+    @include transition-duration(0.3s);
+    @include transition-timing-function(ease);
+    &:after{
+        content:'';
+        position: absolute;
+        left: 1px;
+        top: 1px;
+        height: 20px;
+        width: 20px;
+        background-color: $blanc;
+        @include border-radius(50%);
+        @include transition-property(left);
+        @include transition-duration(0.3s);
+        @include transition-timing-function(ease);
+    }
+    &.checked{
+        background-color: $vert;
+        &:after{
+            left: 24px;
+        }
+    }
+}
+
+.ft-radio{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 3px;
+    border: 2px solid $gris;
+    cursor: pointer;
+    text-align: center;
+    height: 20px;
+    width: 20px;
+    line-height:14px;
+    background-color: $blanc;
+    @include transition-property(background-color);
+    @include transition-duration(0.3s);
+    @include transition-timing-function(ease);
+    @include border-radius(50%);
+    &.checked{
+        background-color: $gris;
+        &:after{
+            content:'\f00c';
+            font-family: FontAwesome;
+            color: $blanc;
+            font-size: 10px;
+        }
+    }
+    &.rouge{
+        border: 2px solid $rouge;
+        &.checked{
+            background-color: $rouge;
+        }
+    }
+    &.vert{
+        border: 2px solid $vert;
+        &.checked{
+            background-color: $vert;
+        }
+    }
+}
+
+.ft-file{
+    display: inline-block;
+    padding:8px 20px;
+    background-color: $gris;
+    color: $blanc;
+    cursor: pointer;
+    font-size: 15px;
+    .fa{
+        margin-right: 5px;
+    }
+}
+
+.ft-select{
+    width: 350px;
+    display: inline-block;
+    padding:8px 45px 8px 20px;
+    background-color: $gris;
+    position: relative;
+    span{
+        color: $blanc;
+        cursor: pointer;
+        font-size: 15px;
+        cursor: pointer;
+        display: block;
+    }
+    &:after{
+        content:'\f0d9';
+        position: absolute;
+        top: 50%;
+        margin-top: -5px;
+        right: 15px;
+        height: 10px;
+        width: 10px;
+        line-height:10px;
+        color: #fff;
+        font-size: 16px;
+        font-family: FontAwesome;
+        @include transition-property(transform);
+        @include transition-duration(0.3s);
+        @include transition-timing-function(ease);
+    }
+    &.clicked{
+        &:after{
+            @include transform(rotate(-90deg));
+        }
+    }
+}
+
+.ft-select-options{
+    position: absolute;
+    left: 0px;
+    top: 41px;
+    right: 0px;
+    z-index:1;
+    background-color: darkcyan;
+    display: none;
+    max-height: 350px;
+    overflow-y: auto;
+    span{
+        width: 100%;
+        @include transition-property(background-color);
+        @include transition-duration(0.3s);
+        @include transition-timing-function(ease);
+        padding:8px 45px 8px 20px;
+        &:hover{
+            background-color: lighten(darkcyan,5%);
+        }
+    }
+}
